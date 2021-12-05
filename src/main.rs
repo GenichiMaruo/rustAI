@@ -1,13 +1,26 @@
 //main rustAI code
 
 struct Variable{
-    data: f64
+    data: f64,
 }
 impl Variable{
-    fn put_data(&self){
+    pub fn new() -> Variable{
+        Variable {
+            data: 0.0
+        }
     }
 }
 
 fn main(){
-    let data = Variable{data: 1.0};
+    let x = Variable::new();
+    println!("{}",x.data);
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn variable_test() {
+        let x = super::Variable::new();
+        assert_eq!(x.data, 0.0);
+    }
 }
