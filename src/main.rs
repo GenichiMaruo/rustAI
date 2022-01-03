@@ -1,6 +1,8 @@
 //main rustAI code
 
-struct Variable{
+mod functions;
+
+pub struct Variable{
     data: f64,
 }
 impl Variable{
@@ -14,6 +16,8 @@ impl Variable{
 fn main(){
     let x = Variable::new();
     println!("{}",x.data);
+    let y = functions::square(x);
+    println!("{}",y.data);
 }
 
 #[cfg(test)]
