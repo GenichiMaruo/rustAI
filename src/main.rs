@@ -27,4 +27,23 @@ mod tests {
         let x = super::Variable::new();
         assert_eq!(x.data, 0.0);
     }
+    fn square_test(){
+        let x = super::Variable::new();
+        let y = super::Variable::new();
+        y = functions::square(x);
+        assert_eq!(y.data, 0.0);
+    }
+    fn add_test() {
+        let x = super::Variable::new();
+        let y = super::Variable::new();
+        let z = super::Variable::new();
+        z = functions::add(x,y);
+        assert_eq!(z.data, 0.0);
+    }
+    fn exp_test() {
+        let x = super::Variable::new();
+        let y = super::Variable::new();
+        y = functions::exp(x, 2);
+        assert_eq!(y.data, 0.0);
+    }
 }
