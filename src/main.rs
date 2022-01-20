@@ -11,10 +11,15 @@ impl Variable{
             data: 0.0
         }
     }
+    pub fn set(x: f64) -> Variable{
+        Variable {
+            data: x,
+        }
+    }
 }
 
 fn main(){
-    let x = Variable::new();
+    let x = Variable::set(3.0);
     println!("{}",x.data);
     let y = functions::square(x);
     println!("{}",y.data);
@@ -29,8 +34,7 @@ mod tests {
     }
     fn square_test(){
         let x = super::Variable::new();
-        let y = super::Variable::new();
-        y = functions::square(x);
+        let y = functions::square(x);
         assert_eq!(y.data, 0.0);
     }
     fn add_test() {

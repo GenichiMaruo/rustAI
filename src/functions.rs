@@ -1,22 +1,22 @@
-pub fn square(x: super::Variable) -> crate::Variable{
-    let y = super::Variable::new();
-    y.data = x.data * x.data;
-    println!("{}",y.data);
-    return y;
-}
-
-pub fn add(x: super::Variable, y: super::Variable) -> crate::Variable{
-    let z = super::Variable::new();
-    z.data = x.data + x.data;
-    println!("{}",z.data);
-    return y;
-}
-
-pub fn exp(x: super::Variable, y: i32) -> crate::Variable{
-    let z = super::Variable::new();
-    for n in 1..y {
-        z.data = z.data * x.data;
+pub fn square(x: super::Variable) -> super::Variable{
+    super::Variable{
+        data: x.data * x.data,
     }
-    println!("{}",z.data);
-    return z;
+}
+
+pub fn add(x: super::Variable, y: super::Variable) -> super::Variable{
+    super::Variable{
+        data: x.data + y.data,
+    }
+}
+
+pub fn exp(x: super::Variable, y: i32) -> super::Variable{
+    let mut z: f64;
+    z = 1.0;
+    for _n in 1..y {
+        z *= x.data;
+    }
+    super::Variable{
+        data: z,
+    }
 }
